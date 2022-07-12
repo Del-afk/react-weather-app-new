@@ -1,0 +1,96 @@
+li {
+  list-style-type: none;
+}
+
+.cityname {
+  font-family: "Abel", sans-serif;
+  color: white;
+  font-weight: lighter;
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  margin-bottom: 0;
+}
+.weathericon {
+  max-width: 250px;
+  height: 170px;
+  display: block;
+  margin: 0px auto -20px;
+}
+.states {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+}
+.degree {
+  display: block;
+  flex-basis: 46%;
+  text-align: right;
+  font-family: "Abel";
+  font-size: 32px;
+  color: white;
+  margin: 0px 10px 0 -10px;
+}
+#celfar {
+  display: block;
+  flex-basis: 50%;
+  font-family: "Abel";
+  font-size: 32px;
+  color: white;
+}
+#cel,
+#far {
+  text-align: center;
+  font-family: "Abel";
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+}
+#cel i:link,
+#cel i:visited,
+#far i:link,
+#far i:visited {
+  color: white;
+  text-decoration: none;
+}
+.degree i:hover {
+  text-decoration: underline;
+}
+.realtime {
+  display: block;
+  margin: 0px auto;
+  text-align: center;
+  font-family: "Abel";
+  font-size: 22px;
+  color: white;
+}
+.weatherstatus {
+  display: block;
+  flex-basis: 400px;
+  margin: 0px auto 5px;
+  text-align: center;
+  font-family: "Abel";
+  font-size: 22px;
+  color: white;
+}
+.humidity {
+  text-align: center;
+  flex-basis: 50%;
+  font-family: "Abel";
+  font-size: 18px;
+  color: white;
+  margin: 10px auto;
+}
+.windspeed {
+  text-align: center;
+  flex-basis: 50%;
+  font-family: "Abel";
+  font-size: 18px;
+  color: white;
+  margin: 10px auto;
+}
+.address {
+  text-align: center;
+}
