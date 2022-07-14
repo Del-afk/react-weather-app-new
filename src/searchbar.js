@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "font-awesome/css/font-awesome.min.css";
+
 import "./searchbar.css";
 
 export default function Searchbar() {
