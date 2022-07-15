@@ -13,6 +13,48 @@ export default function TodayPart(props) {
     setTab(1);
   };
 
+  function changeImage(icon) {
+    let imageUrl = "/sunny.svg";
+    if (icon == "01d") {
+      imageUrl = "/sunny.svg";
+    } else if (icon == "02d") {
+      imageUrl = "/sunny mid cloudy.svg";
+    } else if (icon == "03d") {
+      imageUrl = "/cloud.svg";
+    } else if (icon == "04d") {
+      imageUrl = "/cloud.svg";
+    } else if (icon == "09d") {
+      imageUrl = "/sun cloud mid rain.svg";
+    } else if (icon == "10d") {
+      imageUrl = "/sun cloud little rain.svg";
+    } else if (icon == "11d") {
+      imageUrl = "/cloud 3 zap.svg";
+    } else if (icon == "13d") {
+      imageUrl = "/big snow.svg";
+    } else if (icon == "50d") {
+      imageUrl = "/mid snow fastwind.svg";
+    } else if (icon == "01n") {
+      imageUrl = "/clearmoon.svg";
+    } else if (icon == "02n") {
+      imageUrl = "/moon cloud fast wind.svg";
+    } else if (icon == "03n") {
+      imageUrl = "/nightcloud.svg";
+    } else if (icon == "04n") {
+      imageUrl = "/nightcloud.svg";
+    } else if (icon == "09n") {
+      imageUrl = "/moon cloud mid rain.svg";
+    } else if (icon == "10n") {
+      imageUrl = "/night rain.svg";
+    } else if (icon == "11n") {
+      imageUrl = "/night zap.svg";
+    } else if (icon == "13n") {
+      imageUrl = "/nightsnow.svg";
+    } else if (icon == "50n") {
+      imageUrl = "/nightmist.svg";
+    }
+    return imageUrl;
+  }
+
   return (
     <div className="detail">
       <h1 id="cityname" className="cityname">
@@ -20,7 +62,7 @@ export default function TodayPart(props) {
       </h1>
       <p id="realtime" className="realtime"></p>
       <img
-        src="/sunny.svg"
+        src={changeImage(props.data.weather[0].icon)}
         id="weathericon"
         className="weathericon"
         alt="weather icon"

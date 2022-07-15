@@ -14,7 +14,7 @@ export default function App() {
     let data = response.data;
     data.main.temp = Math.round(data.main.temp)
     data.main.tempFa = Math.round((data.main.temp * 9) / 5) + 32;
-    console.log(data.main)
+    console.log(data)
     setData(data);
   }
 
@@ -33,7 +33,7 @@ if (!data){
     <div className="App">
       <Searchbar city={city} setCity={setCity} submit={callAPi} />
       <TodayPart data={data} />      
-      <Forcast />
+      {/* <Forcast /> */}
     </div>
   );
 }
