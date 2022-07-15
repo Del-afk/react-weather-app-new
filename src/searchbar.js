@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import "font-awesome/css/font-awesome.min.css";
-
+import axios from "axios";
 import "./searchbar.css";
 
 export default function Searchbar() {
   let [city, setCity] = useState("");
+  let apiKey = "eef545a795cae9fca6e032ee8406884a";
+  let cityName = "new york";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleSubmit);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert(`searching for ${city}`);
+  function handleSubmit(response) {
+    console.log(response.data);
   }
   function ChangeCity(event) {
     setCity(event.target.value);

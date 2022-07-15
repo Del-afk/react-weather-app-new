@@ -1,4 +1,6 @@
+import React, { useState } from "react"; 
 import "./today-part.css";
+import axios from "axios";
 
 export default function TodayPart() {
   return (
