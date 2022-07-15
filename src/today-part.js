@@ -1,12 +1,22 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 import "./today-part.css";
-import axios from "axios";
 
-export default function TodayPart() {
+export default function TodayPart(props) {
+  let [tab, setTab] = useState(0);
+  if (!props.data) {
+    return "";
+  }
+  const tabHandler = () => {
+    setTab(0);
+  };
+  const tabHandlerFa = () => {
+    setTab(1);
+  };
+
   return (
     <div className="detail">
       <h1 id="cityname" className="cityname">
-        Amsterdam
+        {props.data.name}
       </h1>
       <p id="realtime" className="realtime"></p>
       <img
@@ -17,20 +27,25 @@ export default function TodayPart() {
       />
       <ul className="states">
         <li id="degree" className="degree">
-          {" "}
-          32
+          {tab == 0 ? props.data.main.temp : props.data.main.tempFa}
         </li>
         <li id="celfar">
-          <i id="cel">°C</i> | <i id="far">°F</i>
+          <i id="cel" onClick={tabHandler}>
+            °C
+          </i>{" "}
+          |{" "}
+          <i id="far" onClick={tabHandlerFa}>
+            °F
+          </i>
         </li>
         <li id="weatherstatus" className="weatherstatus">
-          light rain
+          {props.data.weather[0].description}
         </li>
         <li id="windspeed" className="windspeed">
-          Wind Speed: 0.17km/h
+          Wind Speed: {Math.round(props.data.wind.speed)}km/h
         </li>
         <li id="humidity" className="humidity">
-          Humidity : 43%
+          Humidity : {Math.round(props.data.main.humidity)}%
         </li>
       </ul>
     </div>

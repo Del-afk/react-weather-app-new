@@ -2,18 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./searchbar.css";
 
-export default function Searchbar() {
-  let [city, setCity] = useState("");
-  let apiKey = "eef545a795cae9fca6e032ee8406884a";
-  let cityName = "new york";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleSubmit);
-
-  function handleSubmit(response) {
-    console.log(response.data);
+export default function Searchbar(props) {
+  
+  function handleSubmit(event) {
+    event.preventDefault()
+    props.submit()
   }
   function ChangeCity(event) {
-    setCity(event.target.value);
+    props.setCity(event.target.value);
   }
 
   return (
@@ -33,6 +29,7 @@ export default function Searchbar() {
           className="btn btn-outline-secondary searchbutton"
           type="button"
           id="button-addon2"
+          onClick={handleSubmit}
         >
           <img className="searchicon" src="/icons8-search.svg" alt="" />
         </button>
