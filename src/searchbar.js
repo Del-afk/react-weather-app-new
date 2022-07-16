@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./searchbar.css";
 
 export default function Searchbar(props) {

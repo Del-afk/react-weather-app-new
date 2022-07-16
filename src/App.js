@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import "./searchbar";
 import Searchbar from "./searchbar";
@@ -24,16 +24,14 @@ export default function App() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleData);
   }
-if (!data){
-  callAPi()
 
-}
+useEffect(callAPi,[]);
 
   return (
     <div className="App">
       <Searchbar city={city} setCity={setCity} submit={callAPi} />
       <TodayPart data={data} />      
-      {/* <Forcast /> */}
+      <Forcast data={data} />
     </div>
   );
 }

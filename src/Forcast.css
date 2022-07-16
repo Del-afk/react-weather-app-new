@@ -38,7 +38,7 @@
   .forcasthumidity {
     position: absolute;
     top: 70px;
-    right: 160px;
+    right: 140px;
     font-size: 14px;
     color: #ebebf599;
     font-family: "Abel";
@@ -47,7 +47,7 @@
   .forcastwindspeed {
     position: absolute;
     top: 90px;
-    right: 135px;
+    right: 140px;
     font-size: 14px;
     color: #ebebf599;
     font-family: "Abel";
@@ -56,8 +56,8 @@
   .forcaststatus {
     position: absolute;
     top: 90px;
-    right: 35px;
-    font-size: 19px;
+    right: 20px;
+    font-size: 16px;
     color: #ebebf599;
     font-family: "Abel";
     margin: 0;
@@ -65,7 +65,7 @@
   .forcastdayname {
     position: absolute;
     top: 9px;
-    right: 95px;
+    right: 100px;
     font-size: 15px;
     color: #ebebf599;
     font-family: "Abel";
